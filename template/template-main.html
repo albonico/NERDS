@@ -1,0 +1,119 @@
+{% extends "_layout.html" %}
+{% block title %}
+    <title>NERDS Conference</title>
+{% endblock %}
+
+{% block content %}
+ <!----------- LINK TO ONLINE STREAMING ----------->
+
+<!-- <div class="container-fluid practicalinfo">
+  <a href="https://meet.jit.si/NewEasygoingResearchDPhilSummerConference2020">Join the conference!</a>
+  <p>PASSWORD: NERDS2020</p>
+</div>
+-->
+
+{% if temp %}
+<nav class="navbar navbar-default titolo">
+   <div class="container-fluid justify-content-center">
+        <h1>After last year's success...</h1>
+   </div>
+</nav>
+  <div class="conference-image">
+  </div>
+<nav class="navbar navbar-default titolo">
+  <div class="container-fluid justify-content-center">
+   <h1>NERDS is back, with one extra dimension!</h1>
+   <h1>Join us for the first in-person edition, October 20th-22nd in L6.</h1>
+  </div>
+</nav>
+
+<div id="wrapper">
+  <div class="superposition-content">
+    <h1>Can't wait to see your name on the timetable? Drop us an email with a catchy title and an intriguing abstract!</h1>
+  </div>
+  <div class="TTable container-fluid justify-content-center">
+    <div class="row container-fluid">
+      {% for day in schedule %}
+        <div class="col-12 col-lg-4">
+            <div class="row">
+            {% for slot in day.iterrows() %}
+              <div class="col-lg-12 {{slot.defsize}} {{slot.kind}} d-flex align-items-center justify-content-center">
+                {% if slot.flip %}
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front d-flex align-items-center justify-content-center">
+                {% endif %}
+                      {% if slot.timed %}
+                       <span class="time"></span><span class="name"></span>
+                      {% endif %}
+                {% if slot.flip %}
+                    </div>
+                    <div class="flip-card-back talk d-flex align-items-center justify-content-center">
+                      <a href="abstracts.html#{{slot.ref}}">
+                        <span></span>
+                      </a>
+                    </div>
+                {% endif %}
+                  </div>
+              </div>
+            {% endfor %}
+            </div>
+        </div>
+      {% endfor %}
+    </div>
+</div> 
+
+</div>
+
+
+{% else %}
+
+
+<nav class="navbar navbar-default titolo">
+   <div class="container-fluid justify-content-center">
+        <h1>TIMETABLE</h1>
+   </div>
+</nav>
+
+
+<div class="TTable container-fluid justify-content-center">
+  <div class="row container-fluid">
+    {% for day in schedule %}
+      <div class="col-12 col-lg-4">
+          <div class="row">
+          {% for lab,slot in day.iterrows() %}
+            <div class="col-lg-12 {{ slot.defsize }} {{ slot.kind }} d-flex align-items-center justify-content-center">
+              {% if slot.flip %}
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front d-flex align-items-center justify-content-center">
+              {% endif %}
+                    {% if slot.timed %}
+                     <span class="time">{{slot.time}}</span><span class="name">{{slot.speaker}}</span>
+                    {% else %}
+                      {% if slot.text %}
+                        <span>{{slot.speaker}}</span>
+                      {% endif %}
+                    {% endif %}
+              {% if slot.flip %}
+                  </div>
+                  <div class="flip-card-back talk d-flex align-items-center justify-content-center">
+                    <a href="abstracts.html#{{slot.ref}}">
+                      <span>{{slot.title}}</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+</div> 
+
+<a id="backtotop" href="#topofthepage">&#8679;</a>
+{% endif %}
+
+
+{% endblock %}

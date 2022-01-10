@@ -1,0 +1,499 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));     
+  color: black;
+  background-color: white;
+  font-family: 'Amatic SC';
+  height: 100%;
+}
+
+
+/*----------- LINK TO ONLINE STREAMING -----------*/
+
+.practicalinfo {
+  margin-top: 10vh;
+}
+
+.practicalinfo a {
+  text-decoration: underline;
+}
+
+.practicalinfo p {
+  font-size: 0.5em;
+}
+
+/*----------- NAVIGATION BAR? -----------*/
+header {
+  font-family: 'Oswald', sans-serif;
+  color: black;
+}
+
+#header-nav {
+  background-color: white;
+  border-radius: 0;
+  align-content: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+
+.navbar-brand {
+  margin: 0;
+}
+
+.navbar-brand h1 {
+  font-weight: 300;
+  font-size: calc(2.5*(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))));
+  margin:0;
+  text-align: center;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+
+/*
+.dropbtn {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.dropdown-content {
+  background: white;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 1px solid black;
+}
+
+.menu-list {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  color: black;
+  font-size: 1em;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.bottomline {
+  border-bottom: 1px solid black;
+}
+
+.container div {
+  text-align: center;
+}
+
+.container .navbar-header {
+  text-align: center;
+  display: inline-block;
+  float: none;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+*/
+
+/*----------- BACK TO TOP BUTTON -----------*/
+
+
+#backtotop {
+  background: white;
+  font-size: 1em;
+  color: black;
+  float: right;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: solid black 1px;
+  margin: 5vh;
+
+}
+
+/*----------- A TAG -----------*/
+
+
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: grey;
+}
+
+/*----------- MAIN BODY IN INDEX -----------*/
+
+.day {
+  padding-left: 20vh;
+  padding-right: 20vh;
+}
+
+.time {
+  width: 100%;
+  font-size: 0.8em;
+  text-align: center;
+  padding-right: 1vh;
+  padding-left: 18vh;
+}
+
+.name {
+  text-align: center;
+  width: 100%;
+  padding-right: 18vh;
+  padding-left: 1vh;
+}
+
+.main-title{
+  font-family: 'Oswald', sans-serif;
+}
+
+.titolo h1 {
+  font-weight: 100;
+  font-size: 2em;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.titolo {
+	padding: 20px;
+}
+
+.TTable {
+	width: 90%;
+	margin-top: 50px;
+}
+
+.setsize {
+  height: 25vh;
+  padding: 0;
+}
+
+.setsize-double {
+  height: 50vh;
+  padding: 0;
+}
+
+.row .toprow {
+  height: 16vh;
+}
+
+.talk {
+  font-size: 0.8em;
+}
+
+.speaker {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.date {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.flip-card-front {
+  padding-bottom: 15px;
+}
+
+div {
+  text-align: center;
+}
+
+.flip-card-back a {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.borderright {
+  border-right: grey dashed 0.1px;
+}
+
+.linktoabstract{
+
+}
+
+.flip-card-back span {
+  text-decoration: underline;
+}
+
+/*----------- MAIN BODY IN ABSTRACTS -----------*/
+
+.boxabstracts {
+  width: 70%;
+  text-align: left;
+}
+
+h1 span {
+  font-size: 0.7em;
+}
+
+.speakertitlel {
+  font-size: 1.3em;
+  margin-bottom: 2vh;
+  margin-top: 5vh;
+  line-height: 4vh;
+  text-align: left;
+  font-family: 'Oxygen Mono', sans-serif;
+}
+
+.abstrl {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8em;
+  text-align: left;
+  width: 100%;
+}
+
+.speakertitler {
+  font-size: 1.3em;
+  margin-bottom: 2vh;
+  margin-top: 5vh;
+  line-height: 4vh;
+  text-align: right;
+  font-family: 'Oxygen Mono', sans-serif;
+}
+
+.abstrr {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8em;
+  text-align: right;
+  width: 100%;
+}
+
+.titletalk {
+    font-family: 'Amatic SC', cursive;
+}
+
+
+/*----------- TEMPORARY PAGE BEFORE ANNOUNCED TIMETABLE: SUPERPOSITION OF FADING TABLE AND TEXT -----------*/
+
+#wrapper{
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.superposition-content{
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    position: relative;
+    z-index: 100;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.superposition-background{
+    color: #999999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+.superposition-content h1 {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20%;
+  width: 60%;
+  line-height: 15vh;
+}
+
+
+/** ----------------------------------------------- MEDIA QUERIES ----------------------------------------------------------**/
+
+
+@media screen and (min-width: 992px){
+
+.breakhere { display: none; }
+
+
+/** ----------------------------- ABSTRACTS -----------------------------------------**/
+
+.speakertitler {
+  line-height: 8vh;
+}
+
+.speakertitlel {
+  line-height: 8vh;
+}
+
+
+
+/** ----------------------------- STYLING TIMETABLE -----------------------------------------**/
+
+h1 span {font-size: 1em;}
+
+.flip-card-back span {
+  text-decoration: none;
+}
+
+.bordertop {
+  border-top: black solid 1px;
+}
+
+.borderright {
+  border-right: black solid 1px;
+}
+
+.row .toprow {
+  height: 25vh;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  padding: 0;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: white;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background:#deeaee;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+/*
+.dropbtn {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  background: white;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 1px solid black;
+}
+
+.menu-list {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  color: black;
+  font-size: 1em;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+*/
+
+
+}
+
+/*----------- CONFERENCE PICTURE -----------*/
+
+
+/** ------------------------- Devices w. screen smaller than 768px ---------------------------- **/
+@media (max-device-width: 767px) {
+.conference-image {
+/* The image used */
+  background-image: url("../images/SolvayNERDS.png");
+  background-position: center; 
+
+  margin-top: 0;
+
+  /* Full height */
+  height: 100%;
+  width: 100%;
+
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+/*  vertical-align: baseline;
+*/}
+
+
+}
+
+
+
+/** ------------------------- Devices that cannot hover ---------------------------- **/
+/** @media (hover: none) { 
+}**/
+
+
+
+
+
+
+
+/** ------------------------- Devices w. screen larger than 767px ---------------------------- **/
+@media (min-device-width: 768px) {
+.conference-image {
+/* The image used */
+  background-image: url("../images/SolvayNERDS.png");
+
+  /* Full height */
+/*  width: 100%;*/
+  min-height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+}
+

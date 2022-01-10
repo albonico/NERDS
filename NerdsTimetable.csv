@@ -1,0 +1,29 @@
+day,defsize,kind,flip,timed,text,time,speaker,ref,title
+1,setsize,date,0,0,1,,WED 20.10,,
+1,setsize-double,speaker,1,0,0,,,,Go back to bed!
+1,setsize,speaker,1,1,1,10,Giulia,Giulia2021,Massive amplitudes from the worldsheet
+1,setsize,date,0,1,1,10.45,Coffee Break,,
+1,setsize,speaker,1,1,1,11.15,Sujay,Sujay2021,Un-Higgsing the Higgs Branch
+1,setsize,speaker,1,1,1,12,Palash,Palash2021,Superconformal Indices BUT they're not just modular
+1,setsize,date,0,1,1,12.45,Lunch Break,,
+1,setsize,speaker,1,1,1,13.45,Pyry,Pyry2021,Attractive Calabi-Yau Manifolds
+1,setsize,speaker,1,1,1,14.30,Joseph,Joseph2021,Flux Modularity
+2,setsize,date,0,0,1,,THU 21.10,,
+2,setsize-double,speaker,1,0,0,,,,Go back to bed!
+2,setsize,speaker,1,1,1,10,Marieke,Marieke2021,Connecting the Higgs Branches of 5d SCFTs
+2,setsize,speaker,1,1,1,10.45,Horia,Horia2021,The U-plane of rank-one 4d N=2 KK theories
+2,setsize,date,0,1,1,11.30,Coffee Break,,
+2,setsize,speaker,1,1,1,12,Lea,Lea2021,SQFT dualities and their index identities
+2,setsize,date,0,1,1,12.45,Lunch Break,,
+2,setsize,speaker,1,1,1,13.45,Enrico,Enrico2021,More than a circle... A tale about T-duality
+2,setsize,speaker,1,1,1,14.30,Mateo,Mateo2021,SCFTs 4 ETCS & GCS: WTF?
+3,setsize,date,0,0,1,,FRI 22.10,,
+3,setsize,speaker,1,1,1,9,Maria,Maria2021,Random perturbations of the O(2) vector model
+3,setsize,date,0,1,1,9.45,Short Break,,
+3,setsize,speaker,1,1,1,10,Andrea,Andrea2021,"Hey, I just met you and this is singular..."
+3,setsize,speaker,1,1,1,10.45,Pietro,Pietro2021,"... But here's my (Euler) number, so call me spindle"
+3,setsize,date,0,1,1,11.30,Coffee Break,,
+3,setsize,speaker,1,1,1,12,Dewi,Dewi2021,"Holography, 1-Form Symmetries, and Confinement"
+3,setsize,speaker,1,1,1,12.45,Giuseppe,Giuseppe2021,Non-supersymmetric brane profiles and dilaton tadpoles
+3,setsize-double,date,0,1,1,13.30,Lunch Break,,
+3,setsize-double,speaker,1,1,1,15.15,Discussion Session,,
