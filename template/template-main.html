@@ -88,10 +88,10 @@
                   <div class="flip-card-front d-flex align-items-center justify-content-center">
               {% endif %}
                     {% if slot.timed %}
-                     <span class="time">{{slot.time}}</span><span class="name">{{slot.speaker}}</span>
+                     <span class="time">{{slot.time}}</span><span class="name">{{slot.text}}</span>
                     {% else %}
-                      {% if slot.text %}
-                        <span>{{slot.speaker}}</span>
+                      {% if slot.description %}
+                        <span>{{slot.text}}</span>
                       {% endif %}
                     {% endif %}
               {% if slot.flip %}

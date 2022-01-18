@@ -6,7 +6,7 @@ from jinja2 import Template, Environment, FileSystemLoader
 
 
 class SiteGenerator:
-    def __init__(self, df, timetable,temp):
+    def __init__(self, df, timetable, temp):
         self.talks = df
         self.schedule = timetable
         self.temp=temp
@@ -56,29 +56,41 @@ if __name__ == "__main__":
     my_parser.add_argument("Temp", metavar="temp", type=int, help="Temporary version")
 
     my_parser.add_argument(
-        "--ofile",
-        "-o",
-        metavar="output_path",
+        "--tfile",
+        "-t",
+        metavar="input_timetable_path",
         type=str,
-        default="abstracts.html",
-        help='define name of output file to save result i.e. "abstracts.html"',
+        default="NerdsTimetable.csv",
+        help='define name of input file for timetable i.e. "NerdsTimetable.csv"',
+    )
+
+    my_parser.add_argument(
+        "--datafile",
+        "-d",
+        metavar="input_data_path",
+        type=str,
+        default="NerdsData.csv",
+        help='define name of input file for talk data i.e. "NerdsData.csv"',
     )
 
     # Execute the parse_args() method
     args = my_parser.parse_args()
 
+    timetable_data=args.tfile
+    talks_data=args.datafile
     year = args.Year
     temp = args.Temp
-    out_filepath = args.ofile
     schedule=[]
 
-    df = pd.read_csv("/Users/giulia/Documents/Website/NERDS/NerdsData.csv")
+    df = pd.read_csv(talks_data)
 
-    timetable = pd.read_csv("/Users/giulia/Documents/Website/NERDS/NerdsTimetable.csv",dtype={"day" : int,"size" :str,"kind" :str,"flip":int,"timed":int,"text":int,"time":str,"speaker":str,"ref":str,"title":str})
+    if temp==0:
+        timetable = pd.read_csv(timetable_data,dtype={"day" : int,"size" :str,"kind" :str,"flip":int,"timed":int,"description":int,"time":str,"text":str,"ref":str,"title":str})
 
-    for i in range(1,timetable.iloc[-1,0]+1):
-    	schedule.append(timetable[timetable['day']==i])
-    
+        for i in range(1,timetable.iloc[-1,0]+1):
+            schedule.append(timetable[timetable['day']==i])
+        
+
     current = df[df["Year"] == year]
 
     SiteGenerator(current,schedule,temp)
