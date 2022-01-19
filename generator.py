@@ -9,7 +9,7 @@ class SiteGenerator:
     def __init__(self, df, timetable, temp):
         self.talks = df
         self.schedule = timetable
-        self.temp=temp
+        self.temp = temp
         self.env = Environment(loader=FileSystemLoader("template"))
         self.empty_public()
         self.copy_static()
@@ -42,7 +42,9 @@ class SiteGenerator:
         print("Rendering main page to static file.")
         template = self.env.get_template("template-main.html")
         with open("public/index.html", "w+") as file:
-            html = template.render(title="Index", schedule=self.schedule,temp=self.temp)
+            html = template.render(
+                title="Index", schedule=self.schedule, temp=self.temp
+            )
             file.write(html)
 
 
@@ -76,21 +78,34 @@ if __name__ == "__main__":
     # Execute the parse_args() method
     args = my_parser.parse_args()
 
-    timetable_data=args.tfile
-    talks_data=args.datafile
+    timetable_data = args.tfile
+    talks_data = args.datafile
     year = args.Year
     temp = args.Temp
-    schedule=[]
+    schedule = []
 
     df = pd.read_csv(talks_data)
 
-    if temp==0:
-        timetable = pd.read_csv(timetable_data,dtype={"day" : int,"size" :str,"kind" :str,"flip":int,"timed":int,"description":int,"time":str,"text":str,"ref":str,"title":str})
+    if temp == 0:
+        timetable = pd.read_csv(
+            timetable_data,
+            dtype={
+                "day": int,
+                "size": str,
+                "kind": str,
+                "flip": int,
+                "timed": int,
+                "description": int,
+                "time": str,
+                "text": str,
+                "ref": str,
+                "title": str,
+            },
+        )
 
-        for i in range(1,timetable.iloc[-1,0]+1):
-            schedule.append(timetable[timetable['day']==i])
-        
+        for i in range(1, timetable.iloc[-1, 0] + 1):
+            schedule.append(timetable[timetable["day"] == i])
 
     current = df[df["Year"] == year]
 
-    SiteGenerator(current,schedule,temp)
+    SiteGenerator(current, schedule, temp)
