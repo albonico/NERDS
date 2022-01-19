@@ -22,8 +22,8 @@ source myvenv/bin/activate
 Either in the virtual environment or on your computer, install the required packages:
 
 ```
-pip install pandas 1.1.3
-pip install jinja2 2.11.2
+pip3 install pandas==1.1.3
+pip3 install jinja2==2.11.2
 ```
 
 Then run the generator.py script to produce the html files as detailed below
