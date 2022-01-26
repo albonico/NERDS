@@ -1,4 +1,4 @@
-day,defsize,kind,flip,timed,text,time,speaker,ref,title
+day,defsize,kind,flip,timed,non_empty,time,text,ref,title
 1,setsize,date,0,0,1,,WED 20.10,,
 1,setsize-double,speaker,1,0,0,,,,Go back to bed!
 1,setsize,speaker,1,1,1,10,Giulia,Giulia2021,Massive amplitudes from the worldsheet

@@ -484,7 +484,7 @@ h1 span {font-size: 1em;}
 @media (min-device-width: 768px) {
 .conference-image {
 /* The image used */
-  background-image: url("../images/SolvayNERDS.png");
+  background-image: url("images/SolvayNERDS.png");
 
   /* Full height */
 /*  width: 100%;*/

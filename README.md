@@ -15,18 +15,18 @@ Generator.py is a program that can be used to produce html files for the website
 To run the programm, you only need to ensure you have python 3.4 or above installed on your computer. Ideally you should run the programm in a virtual environment, which is activated on OS and Linux as follows:
 
 ```
-python -m venv ./myvenv
+python3 -m venv ./myvenv
 source myvenv/bin/activate
 ```
 
 Either in the virtual environment or on your computer, install the required packages:
 
 ```
-pip install pandas 1.1.3
-pip install jinja2 2.11.2
+pip3 install pandas 1.4.0
+pip3 install jinja2 3.0.3
 ```
 
-Then run the generator.py script to produce the html files as detailed below
+Then run the generator.py script to produce the html files (as detailed further down)
 
 ```
 python3 generator.py [-h] year temp [-t timetable-path] [-d data-path]
@@ -70,7 +70,7 @@ The timetable data should be in a csv file (e.g. "NerdsTimetable.csv") which sho
 
 - timed : wether the slot has a time <span>  
 
-- description : wether the slot has a text <span>
+- non_empty : wether the slot has a text <span>
 
 - text : the description appearing in the text <span>
 
@@ -96,7 +96,7 @@ The required arguments are:
 
 The optional arguments are :
 
-- timetable-path : the path to the csv file containing the timetable
+- timetable-path : the path to the csv file containing the timetable. If you're generating the temporary page, this should be 'EmptyTimetable.csv'
 
 - data-path : the path to the csv file containing the details of the talks
 

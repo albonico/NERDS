@@ -33,18 +33,19 @@ class SiteGenerator:
 
     def render_abs_page(self):
         print("Rendering abstract page to static file.")
-        template = self.env.get_template("template-abs.html")
+        template = self.env.get_template("template_abs.html")
         with open("public/abstracts.html", "w+") as file:
             html = template.render(title="Abstracts", talks=self.talks)
             file.write(html)
 
     def render_main_page(self):
         print("Rendering main page to static file.")
-        template = self.env.get_template("template-main.html")
+        if temp:
+            template = self.env.get_template("template_main_temp.html")
+        else:
+            template = self.env.get_template("template_main.html")
         with open("public/index.html", "w+") as file:
-            html = template.render(
-                title="Index", schedule=self.schedule, temp=self.temp
-            )
+            html = template.render(title="Index", schedule=self.schedule)
             file.write(html)
 
 
@@ -82,30 +83,28 @@ if __name__ == "__main__":
     talks_data = args.datafile
     year = args.Year
     temp = args.Temp
-    schedule = []
 
     df = pd.read_csv(talks_data)
 
-    if temp == 0:
-        timetable = pd.read_csv(
-            timetable_data,
-            dtype={
-                "day": int,
-                "size": str,
-                "kind": str,
-                "flip": int,
-                "timed": int,
-                "description": int,
-                "time": str,
-                "text": str,
-                "ref": str,
-                "title": str,
-            },
-        )
+    timetable = pd.read_csv(
+        timetable_data,
+        dtype={
+            "day": int,
+            "size": str,
+            "kind": str,
+            "flip": int,
+            "timed": int,
+            "non_empty": int,
+            "time": str,
+            "text": str,
+            "ref": str,
+            "title": str,
+        },
+    )
 
-        for i in range(1, timetable.iloc[-1, 0] + 1):
-            schedule.append(timetable[timetable["day"] == i])
+    grouped_by_day = timetable.groupby("day")
+    timetable_by_day = [grouped_by_day.get_group(day) for day in grouped_by_day.groups]
 
     current = df[df["Year"] == year]
 
-    SiteGenerator(current, schedule, temp)
+    SiteGenerator(current, timetable_by_day, temp)
