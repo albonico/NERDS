@@ -57,10 +57,9 @@ header {
 }
 
 
-/*----------- BACK TO TOP BUTTON -----------*/
 
 
-#backtotop {
+#btn {
   background: white;
   font-size: 1em;
   color: black;
@@ -69,7 +68,20 @@ header {
   padding-right: 4px;
   border: solid black 1px;
   margin: 5vh;
+  border-radius: 5px;
 
+}
+#btn:hover {
+  background: #404040;
+  font-size: 1em;
+  color: white;
+  float: right;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: solid black 1px;
+  margin: 5vh;
+	transition: 0.3s;
+border-radius: 5px;
 }
 
 /*----------- A TAG -----------*/
