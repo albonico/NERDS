@@ -9,6 +9,7 @@ body {
   background-color: white;
   font-family: 'Amatic SC';
   height: 100%;
+  overflow-x: hidden;
 }
 
 
@@ -102,18 +103,18 @@ a:active {
 }
 
 .time {
-  width: 100%;
-  font-size: 0.8em;
+  font-size: 1em;
   text-align: center;
-/*  padding-right: 1vh;
-  padding-left: 18vh;*/
+  padding-right: 2vh;
 }
 
 .name {
   text-align: center;
-  width: 100%;
-/*  padding-right: 18vh;
-  padding-left: 1vh;*/
+  padding-left: 2vh;
+}
+
+.coffee .name {
+  font-size: 0.8em;
 }
 
 .main-title{
@@ -170,7 +171,7 @@ a:active {
 }
 
 .coffee {
-  font-size: 0.8em;
+  font-size: 1.2em;
   background:#f1d4c8;
 }
 
