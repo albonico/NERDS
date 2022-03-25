@@ -56,55 +56,6 @@ header {
 }
 
 
-/*
-.dropbtn {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  padding: 0;
-  border: 0;
-  margin: 0;
-}
-
-.dropdown-content {
-  background: white;
-  width: 100%;
-  z-index: 1;
-  border-bottom: 1px solid black;
-}
-
-.menu-list {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  color: black;
-  font-size: 1em;
-  text-transform: uppercase;
-  width: 100%;
-}
-
-.bottomline {
-  border-bottom: 1px solid black;
-}
-
-.container div {
-  text-align: center;
-}
-
-.container .navbar-header {
-  text-align: center;
-  display: inline-block;
-  float: none;
-}
-
-.navbar-toggler {
-  border: none;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: black;
-}
-*/
-
 /*----------- BACK TO TOP BUTTON -----------*/
 
 
@@ -154,15 +105,15 @@ a:active {
   width: 100%;
   font-size: 0.8em;
   text-align: center;
-  padding-right: 1vh;
-  padding-left: 18vh;
+/*  padding-right: 1vh;
+  padding-left: 18vh;*/
 }
 
 .name {
   text-align: center;
   width: 100%;
-  padding-right: 18vh;
-  padding-left: 1vh;
+/*  padding-right: 18vh;
+  padding-left: 1vh;*/
 }
 
 .main-title{
@@ -180,18 +131,28 @@ a:active {
 	padding: 20px;
 }
 
-.TTable {
-	width: 90%;
-	margin-top: 50px;
+
+.full-container {
+  width: 100%;
+  padding: 0;
+}
+
+.no-padding{
+  padding: 0px;
+}
+
+.set-separator {
+  padding-top: 3vh;
+  border-left: 1px solid black;
 }
 
 .setsize {
-  height: 25vh;
+  height: 10vh;
   padding: 0;
 }
 
 .setsize-double {
-  height: 50vh;
+  height: 20vh;
   padding: 0;
 }
 
@@ -208,9 +169,14 @@ a:active {
   font-size: 1.2em;
 }
 
+.coffee {
+  font-size: 0.8em;
+  background:#f1d4c8;
+}
+
 .date {
   text-align: center;
-  font-size: 0.8em;
+  font-size: 1.5em;
 }
 
 .flip-card-front {
@@ -407,38 +373,6 @@ h1 span {font-size: 1em;}
   color: black;
   transform: rotateY(180deg);
 }
-
-/*
-.dropbtn {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: inline-block;
-  padding: 0;
-  border: 0;
-  margin: 0;
-}
-
-.dropdown-content {
-  display: none;
-  background: white;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  border-bottom: 1px solid black;
-}
-
-.menu-list {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  color: black;
-  font-size: 1em;
-  text-transform: uppercase;
-  width: 100%;
-}
-
-.dropdown:hover .dropdown-content {display: block;}
-*/
 
 
 }
