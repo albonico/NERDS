@@ -19,11 +19,10 @@ python3 -m venv ./myvenv
 source myvenv/bin/activate
 ```
 
-Either in the virtual environment or on your computer, install the required packages:
+Either in the virtual environment or on your computer, install the required packages via:
 
 ```
-pip3 install pandas 1.4.0
-pip3 install jinja2 3.0.3
+pip3 install -r requirements.txt
 ```
 
 Then run the generator.py script to produce the html files (as detailed further down)
@@ -77,6 +76,10 @@ The timetable data should be in a csv file (e.g. "NerdsTimetable.csv") which sho
 - ref : aref to abstract in abstracts page
 
 - title : title of the talk on the back of the flip card
+
+- month : int(month)
+
+- date : int(day)
 
 ### Temporary page
 
