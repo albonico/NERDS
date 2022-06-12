@@ -59,29 +59,32 @@ header {
 
 
 
-#btn {
+.btn {
   background: white;
   font-size: 1em;
   color: black;
-  float: right;
   padding-left: 4px;
   padding-right: 4px;
   border: solid black 1px;
   margin: 5vh;
   border-radius: 5px;
-
+  display: inline-block;
 }
-#btn:hover {
+.btn:hover {
   background: #404040;
   font-size: 1em;
   color: white;
-  float: right;
   padding-left: 4px;
   padding-right: 4px;
   border: solid black 1px;
   margin: 5vh;
-	transition: 0.3s;
-border-radius: 5px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.container-btn {
+  text-align: center;
+  width: 100%;
 }
 
 /*----------- A TAG -----------*/
@@ -94,13 +97,13 @@ a:link {
 /* visited link */
 a:visited {
   color: black;
+  outline: 0;
 }
 
 /* mouse over link */
 a:hover {
   color: black;
   text-decoration: none;
-  background-color: dimgrey;
 }
 
 /* selected link */
@@ -109,6 +112,11 @@ a:active {
 }
 
 /*----------- MAIN BODY IN INDEX -----------*/
+
+.organizational-info {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
 
 .day {
   padding-left: 20vh;
@@ -142,13 +150,14 @@ a:active {
 }
 
 .titolo {
-	padding: 20px;
+  padding: 20px;
 }
 
 
 .full-container {
   width: 100%;
   padding: 0;
+  margin: 0;
 }
 
 .no-padding{
@@ -211,7 +220,7 @@ div {
 }
 
 .linktoabstract{
-
+  font-family: 'Kaushan Script', cursive;
 }
 
 .flip-card-back span {
