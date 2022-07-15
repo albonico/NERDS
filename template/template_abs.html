@@ -1,27 +1,24 @@
 {% extends "_layout.html" %}
 {% block title %}
-    <title>Abstracts</title>
+ <title>NERDS - Abstracts</title>
 {% endblock %}
-
 {% block content %}
 <nav class="navbar navbar-default titolo">
-   <div class="container-fluid justify-content-center">
+    <div class="container-fluid justify-content-center">
         <h1 class="main-title">ABSTRACTS</h1>
-   </div>
+    </div>
 </nav>
-
 <div class="container-fluid boxabstracts">
-{% for lab,talk in talks.iterrows() %}
-      <div>
+    {% for lab,talk in talks.iterrows() %}
+    <div>
         <h1 class={% if lab%2 %}"speakertitler"{% else %}"speakertitlel"{% endif %}>
-          <a class="linktoabstract" name="{{talk.Id}}"> {{talk.Speaker.upper()}} </a><br><span class="titletalk">{{talk.Title}}</span>
+            <a class="linktoabstract" name="{{talk.Id}}"> {{talk.Speaker.upper()}} </a><br><span class="titletalk">{{talk.Title}}</span>
         </h1>
-          <p class="abstrl">{{talk.Abstract}}</p>
-      </div>
-{% endfor %}
+        <p class="abstrl">{{talk.Abstract}}</p>
+    </div>
+    {% endfor %}
 </div>
-
-
-<a id="backtotop" href="#topofthepage">&#8679;</a>
-
+<div class="backtotop">
+    <a class="btn" href="#topofthepage">&#8679;</a>
+</div>
 {% endblock %}

@@ -4,9 +4,9 @@ Generator.py is a program that can be used to produce html files for the website
 
 - template : a folder containing the templates for the html pages as well as css files
 
-- NerdsData.csv and NerdsTimetable.csv : data to appear on the website
+- NerdsData.csv, NerdsOrganizational.csv and NerdsTimetable.csv : data to appear on the website
 
-- generator.py : the python program that renders the jinja2 templates into html files using the data from the csv files
+- generator.py : the python program that renders the jinja2 templates into html files using the data from the csv files. It also generate the ics file.
 
 - public : the folder containing the output of the python program, i.e. the html and css files necessary to produce the website
 
@@ -19,17 +19,16 @@ python3 -m venv ./myvenv
 source myvenv/bin/activate
 ```
 
-Either in the virtual environment or on your computer, install the required packages:
+Either in the virtual environment or on your computer, install the required packages via:
 
 ```
-pip3 install pandas 1.4.0
-pip3 install jinja2 3.0.3
+pip3 install -r requirements.txt
 ```
 
 Then run the generator.py script to produce the html files (as detailed further down)
 
 ```
-python3 generator.py [-h] year temp [-t timetable-path] [-d data-path]
+python3 generator.py [-h] year temp [-t timetable-path] [-d data-path] [-o org-path]
 ```
 
 If you're using venv, don't forget to deactivate and delete the environment:
@@ -78,6 +77,23 @@ The timetable data should be in a csv file (e.g. "NerdsTimetable.csv") which sho
 
 - title : title of the talk on the back of the flip card
 
+- month : int(month)
+
+- date : int(day)
+
+- location : str(room)
+
+## Organizational data
+
+The organizational data is cast in a csv file containing:
+
+- email : email address to contact organizers
+
+- location : where the talks will be held
+
+- dates : dates of the talks in format dd.mm.yyyy
+
+
 ### Temporary page
 
 Before the speakers have submitted their topics, there is the option to generate a temporary main page with an empty table and a call for abstracts.
@@ -85,7 +101,7 @@ Before the speakers have submitted their topics, there is the option to generate
 ## Generator.py
 
 ```
-python3 generator.py [-h] year temp [-t timetable-path] [-d data-path] 
+python3 generator.py [-h] year temp [-t timetable-path] [-d data-path] [-o org-path]
 ```
 
 The required arguments are:
@@ -96,7 +112,9 @@ The required arguments are:
 
 The optional arguments are :
 
-- timetable-path : the path to the csv file containing the timetable. If you're generating the temporary page, this should be 'EmptyTimetable.csv'
+- timetable-path : the path to the csv file containing the timetable (default: 'NerdsTimetable.csv'). If you're generating the temporary page, this should be 'EmptyTimetable.csv'
 
-- data-path : the path to the csv file containing the details of the talks
+- data-path : the path to the csv file containing the details of the talks (default: 'NerdsData.csv').
+
+- org-path : the path to the csv file containing the organizational info (default: 'NerdsOrganizational.csv').
 

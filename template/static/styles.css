@@ -1,264 +1,307 @@
+/*----------- FONTS -----------*/
+
+@font-face {
+  font-family: 'Oswald';
+  src: url(fonts/Oswald-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Oxygen Mono';
+  src: url(fonts/OxygenMono-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Amatic SC';
+  src: url(fonts/AmaticSC-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Kaushan Script';
+  src: url(fonts/KaushanScript-Regular.ttf) format('truetype');
+}
+
+
 html {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));     
-  color: black;
-  background-color: white;
-  font-family: 'Amatic SC';
-  height: 100%;
-  overflow-x: hidden;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+    color: black;
+    background-color: white;
+    font-family: 'Amatic SC';
+    height: 100%;
+    overflow-x: hidden;
 }
 
 
-/*----------- LINK TO ONLINE STREAMING -----------*/
-
-.practicalinfo {
-  margin-top: 10vh;
-}
-
-.practicalinfo a {
-  text-decoration: underline;
-}
-
-.practicalinfo p {
-  font-size: 0.5em;
-}
-
-/*----------- NAVIGATION BAR? -----------*/
+/*----------- NAVIGATION BAR -----------*/
 header {
-  font-family: 'Oswald', sans-serif;
-  color: black;
+    font-family: 'Oswald', sans-serif;
+    color: black;
 }
 
 #header-nav {
-  background-color: white;
-  border-radius: 0;
-  align-content: center;
-  padding-bottom: 20px;
-  border-bottom: 1px solid black;
+    background-color: white;
+    border-radius: 0;
+    align-content: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
 }
 
 .navbar-brand {
-  margin: 0;
+    margin: 0;
 }
 
 .navbar-brand h1 {
-  font-weight: 300;
-  font-size: calc(2.5*(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))));
-  margin:0;
-  text-align: center;
+    font-weight: 300;
+    font-size: calc(2*(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))));
+    margin: 0;
+    text-align: center;
 }
 
-.navbar-brand a:hover, .navbar-brand a:focus {
-  text-decoration: none;
+.navbar-brand a:hover,
+.navbar-brand a:focus {
+    text-decoration: none;
 }
 
 
-
-
-#btn {
-  background: white;
-  font-size: 1em;
-  color: black;
-  float: right;
-  padding-left: 4px;
-  padding-right: 4px;
-  border: solid black 1px;
-  margin: 5vh;
-  border-radius: 5px;
-
+/*----------- BUTTON -----------*/
+.btn {
+    background: white;
+    font-size: 1em;
+    color: black;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: solid black 1px;
+    margin: 5vh;
+    border-radius: 5px;
+    display: inline-block;
 }
-#btn:hover {
-  background: #404040;
-  font-size: 1em;
-  color: white;
-  float: right;
-  padding-left: 4px;
-  padding-right: 4px;
-  border: solid black 1px;
-  margin: 5vh;
-	transition: 0.3s;
-border-radius: 5px;
+
+.btn:hover {
+    background: #404040;
+    font-size: 1em;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: solid black 1px;
+    margin: 5vh;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.container-btn {
+    text-align: center;
+    width: 100%;
 }
 
 /*----------- A TAG -----------*/
 
 
 a:link {
-  color: black;
+    color: black;
 }
 
 /* visited link */
 a:visited {
-  color: black;
+    color: black;
+    outline: 0;
 }
 
 /* mouse over link */
 a:hover {
-  color: black;
-  text-decoration: none;
-  background-color: dimgrey;
+    color: black;
+    text-decoration: none;
 }
 
 /* selected link */
 a:active {
-  color: grey;
+    color: grey;
 }
 
 /*----------- MAIN BODY IN INDEX -----------*/
 
+.organisers {
+  font-size: 0.7em;
+}
+
 .day {
-  padding-left: 20vh;
-  padding-right: 20vh;
+    padding-left: 20vh;
+    padding-right: 20vh;
 }
 
 .time {
-  font-size: 1em;
-  text-align: center;
-  padding-right: 2vh;
+    font-size: 1em;
+    text-align: center;
+    padding-right: 2vh;
 }
 
 .name {
-  text-align: center;
-  padding-left: 2vh;
+    text-align: center;
+    padding-left: 2vh;
 }
 
 .coffee .name {
-  font-size: 0.8em;
+    font-size: 0.9em;
 }
 
-.main-title{
-  font-family: 'Oswald', sans-serif;
+.main-title {
+    font-family: 'Oswald', sans-serif;
 }
 
 .titolo h1 {
-  font-weight: 100;
-  font-size: 2em;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+    font-weight: 100;
+    font-size: 2em;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
 .titolo {
-	padding: 20px;
+    padding: 20px;
 }
 
 
 .full-container {
-  width: 100%;
-  padding: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-.no-padding{
-  padding: 0px;
+.no-padding {
+    padding: 0px;
 }
 
 .set-separator {
-  padding-top: 3vh;
-  border-left: 1px solid black;
+    padding-top: 1vh;
+    border-left: 1px solid black;
+}
+
+
+.infocol {
+  padding-top: 35px;
+  font-size: 1.5em;
+  line-height: 1.3;
+  background-color: #F0F8FF;
 }
 
 .setsize {
-  height: 10vh;
-  padding: 0;
+    height: 10vh;
+    max-height: 100px;
+    min-height: 40px;
+    padding: 0;
 }
 
 .setsize-double {
-  height: 20vh;
+    height: 20vh;
+    max-height: 200px;
+    min-height: 80px;
+    padding: 0;
+}
+
+.setsize-day {
+  height: 12vh;
+  max-height: 120px;
+  min-height: 48px;
   padding: 0;
 }
 
-.row .toprow {
-  height: 16vh;
-}
+
 
 .talk {
-  font-size: 0.8em;
+    font-size: 0.8em;
 }
 
 .speaker {
-  text-align: center;
-  font-size: 1.2em;
+    text-align: center;
+    font-size: 1.2em;
 }
 
 .coffee {
-  font-size: 0.8em;
-  background:#f1d4c8;
+    font-size: 1.0em;
+    background: #f1d4c8;
 }
 
 .date {
-  text-align: center;
-  font-size: 1.5em;
+    text-align: center;
+    font-size: 1.5em;
 }
 
 .flip-card-front {
-  padding-bottom: 15px;
+    padding-bottom: 15px;
 }
 
 div {
-  text-align: center;
+    text-align: center;
 }
 
 .flip-card-back a {
-  margin-left: 10px;
-  margin-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .borderright {
-  border-right: grey dashed 0.1px;
+    border-right: grey dashed 0.1px;
 }
 
-.linktoabstract{
-
+.linktoabstract {
+    font-family: 'Kaushan Script', cursive;
 }
 
 .flip-card-back span {
-  text-decoration: underline;
+    text-decoration: underline;
+}
+
+.backtotop {
+    width: 100%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    padding-right: 10vw;
+    text-align: right;
 }
 
 /*----------- MAIN BODY IN ABSTRACTS -----------*/
 
 .boxabstracts {
-  width: 70%;
-  text-align: left;
+    width: 70%;
+    text-align: left;
 }
 
 h1 span {
-  font-size: 0.7em;
+    font-size: 0.7em;
 }
 
 .speakertitlel {
-  font-size: 1.3em;
-  margin-bottom: 2vh;
-  margin-top: 5vh;
-  line-height: 4vh;
-  text-align: left;
-  font-family: 'Oxygen Mono', sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 2vh;
+    margin-top: 5vh;
+    line-height: 4vh;
+    text-align: left;
+    font-family: 'Oxygen Mono', sans-serif;
 }
 
 .abstrl {
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.8em;
-  text-align: left;
-  width: 100%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8em;
+    text-align: left;
+    width: 100%;
 }
 
 .speakertitler {
-  font-size: 1.3em;
-  margin-bottom: 2vh;
-  margin-top: 5vh;
-  line-height: 4vh;
-  text-align: right;
-  font-family: 'Oxygen Mono', sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 2vh;
+    margin-top: 5vh;
+    line-height: 4vh;
+    text-align: right;
+    font-family: 'Oxygen Mono', sans-serif;
 }
 
 .abstrr {
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.8em;
-  text-align: right;
-  width: 100%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8em;
+    text-align: right;
+    width: 100%;
 }
 
 .titletalk {
@@ -268,13 +311,13 @@ h1 span {
 
 /*----------- TEMPORARY PAGE BEFORE ANNOUNCED TIMETABLE: SUPERPOSITION OF FADING TABLE AND TEXT -----------*/
 
-#wrapper{
+#wrapper {
     position: relative;
     width: 100%;
     height: 200px;
 }
 
-.superposition-content{
+.superposition-content {
     color: black;
     width: 100%;
     text-align: center;
@@ -286,7 +329,7 @@ h1 span {
 
 }
 
-.superposition-background{
+.superposition-background {
     color: #999999;
     position: absolute;
     top: 0;
@@ -295,98 +338,99 @@ h1 span {
 }
 
 .superposition-content h1 {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 20%;
-  width: 60%;
-  line-height: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20%;
+    width: 60%;
+    line-height: 15vh;
 }
 
 
 /** ----------------------------------------------- MEDIA QUERIES ----------------------------------------------------------**/
 
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) {
 
-.breakhere { display: none; }
-
-
-/** ----------------------------- ABSTRACTS -----------------------------------------**/
-
-.speakertitler {
-  line-height: 8vh;
-}
-
-.speakertitlel {
-  line-height: 8vh;
-}
+    .breakhere {
+        display: none;
+    }
 
 
+    /** ----------------------------- ABSTRACTS -----------------------------------------**/
 
-/** ----------------------------- STYLING TIMETABLE -----------------------------------------**/
+    .speakertitler {
+        line-height: 8vh;
+    }
 
-h1 span {font-size: 1em;}
+    .speakertitlel {
+        line-height: 8vh;
+    }
 
-.flip-card-back span {
-  text-decoration: none;
-}
 
-.bordertop {
-  border-top: black solid 1px;
-}
 
-.borderright {
-  border-right: black solid 1px;
-}
+    /** ----------------------------- STYLING TIMETABLE -----------------------------------------**/
 
-.row .toprow {
-  height: 25vh;
-}
+    #timetable {
+      background-color:#FFFFFF;
+    }
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-}
+    h1 span {
+        font-size: 1em;
+    }
 
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
+    .flip-card-back span {
+        text-decoration: none;
+    }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
 
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-  padding: 0;
-}
 
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: white;
-  color: black;
-}
 
-/* Style the back side */
-.flip-card-back {
-  background:#deeaee;
-  color: black;
-  transform: rotateY(180deg);
-}
+    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* This container is needed to position the front and back side */
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        /* Safari */
+        backface-visibility: hidden;
+        padding: 0;
+    }
+
+    /* Style the front side (fallback if image is missing) */
+    .flip-card-front {
+        background-color: white;
+        color: black;
+    }
+
+    /* Style the back side */
+    .flip-card-back {
+        background: #D3E3CF;
+        color: black;
+        transform: rotateY(180deg);
+    }
 
 
 }
@@ -396,32 +440,26 @@ h1 span {font-size: 1em;}
 
 /** ------------------------- Devices w. screen smaller than 768px ---------------------------- **/
 @media (max-device-width: 767px) {
-.conference-image {
-/* The image used */
-  background-image: url("../images/SolvayNERDS.png");
-  background-position: center; 
+    .conference-image {
+        /* The image used */
+        background-image: url("../images/SolvayNERDS.png");
+        background-position: center;
 
-  margin-top: 0;
+        margin-top: 0;
 
-  /* Full height */
-  height: 100%;
-  width: 100%;
+        /* Full height */
+        height: 100%;
+        width: 100%;
 
-  /* Center and scale the image nicely */
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-/*  vertical-align: baseline;
-*/}
+        /* Center and scale the image nicely */
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        /*  vertical-align: baseline;
+*/
+    }
 
 
 }
-
-
-
-/** ------------------------- Devices that cannot hover ---------------------------- **/
-/** @media (hover: none) { 
-}**/
-
 
 
 
@@ -430,18 +468,17 @@ h1 span {font-size: 1em;}
 
 /** ------------------------- Devices w. screen larger than 767px ---------------------------- **/
 @media (min-device-width: 768px) {
-.conference-image {
-/* The image used */
-  background-image: url("images/SolvayNERDS.png");
+    .conference-image {
+        /* The image used */
+        background-image: url("images/SolvayNERDS.png");
 
-  /* Full height */
-/*  width: 100%;*/
-  min-height: 100%;
+        /* Full height */
+        /*  width: 100%;*/
+        min-height: 100%;
 
-  /* Center and scale the image nicely */
-  background-position: center; 
-  background-repeat: no-repeat;
-  background-size: contain;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 }
-}
-
