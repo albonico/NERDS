@@ -1,66 +1,83 @@
 {% extends "_layout.html" %}
 {% block title %}
-    <title>NERDS Conference</title>
+<title>NERDS - Timetable</title>
 {% endblock %}
-
 {% block content %}
-
-
 <div class="full-container justify-content-center container-fluid">
-<div class="row">
-<div class="col-3">
-  <div class="organizational-info">
-      The conference will take place in {{org.location[0]}}.
-  </div>
-  <div class="row container-fluid full-container justify-content-center">
-    <div class="col-12 container-btn">
-      <a id="download_cal" class="btn" href="/downloads/cal.ics">Download calendar</a>
-    </div>
-    <div class="col-12">
-      <a id="contact_organizers" class="btn" href="mailto:{{org.email[0]}}">Contact organizers</a>
-    </div>
-  </div>     
-</div>
-<div class="full-container container-fluid justify-content-center col-9">
-  <div class="row container-fluid no-padding">
-    {% for day in schedule %}
-      <div class="col-12 col-lg-4 set-separator">
-          <div class="row">
-          {% for lab,slot in day.iterrows() %}
-            <div class="col-lg-12 {{ slot.defsize }} {{ slot.kind }} d-flex align-items-center justify-content-center">
-              {% if slot.flip %}
-              <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front d-flex align-items-center justify-content-center">
-              {% endif %}
-                    {% if slot.timed %}
-                     <span class="time">{{slot.time}}</span><span class="name">{{slot.text}}</span>
-                    {% else %}
-                      {% if slot.non_empty %}
-                        <span>{{slot.text}}</span>
-                      {% endif %}
-                    {% endif %}
-              {% if slot.flip %}
-                  </div>
-                  <div class="flip-card-back talk d-flex align-items-center justify-content-center">
-                    <a href="abstracts.html#{{slot.ref}}">
-                      <span>{{slot.title}}</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              {% endif %}
+    <div class="row">
+        <div class="col-3 infocol">
+            3rd edition <br>
+            20th - 22nd October <br><br>
+
+            {{org.building[0]}} <br>
+            {{org.location[0]}}<br><br>
+
+            Organizers: <br>
+            <div class="organisers">
+            {% for person in org.organizers[0] %}
+                <a href="mailto:boido@maths.ox.ac.uk"> {{person}}</a> <br>
+            {% endfor %}
             </div>
-          {% endfor %}
-          </div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
-</div>
-</div>
-
-<a id="backtotop" class="btn" href="#topofthepage">&#8679;</a>
+<!--             <div class="organisers">
+                <a href="mailto:boido@maths.ox.ac.uk">Andrea Boido</a> <br>
+                <a href="mailto:bogna@maths.ox.ac.uk">Giuseppe Bogna</a> <br>
+                <a href="mailto:bottini@maths.ox.ac.uk">Lea Bottini</a> <br>
+                <a href="mailto:singhp1@maths.ox.ac.uk">Palash Singh</a> <br>
+            </div><br> -->
 
 
+<!--             <div>
+                <a id="btn" style="font-size:0.8em;" href=""> DOWNLOAD CALENDAR </a>
+            </div> -->
+
+            <div class="row container-fluid full-container justify-content-center">
+                <div class="col-12 container-btn">
+                    <a id="download_cal" class="btn" href="/downloads/cal.ics">Download calendar</a>
+                </div>
+                <div class="col-12">
+                    <a id="contact_organizers" class="btn" href="mailto:{{org.email[0]}}">Contact organizers</a>
+                </div>
+            </div>
+        </div>
+        <div class="full-container container-fluid justify-content-center col-9">
+            <div id="timetable" class="row container-fluid no-padding">
+                {% for day in schedule %}
+                <div class="col-12 col-lg-4 set-separator">
+                    <div class="row">
+                        {% for lab,slot in day.iterrows() %}
+                        <div class="col-lg-12 {{ slot.defsize }} {{ slot.kind }} d-flex align-items-center justify-content-center">
+                            {% if slot.flip %}
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front d-flex align-items-center justify-content-center">
+                                        {% endif %}
+                                        {% if slot.timed %}
+                                        <span class="time">{{slot.time}}</span><span class="name">{{slot.text}}</span>
+                                        {% else %}
+                                        {% if slot.non_empty %}
+                                        <span>{{slot.text}}</span>
+                                        {% endif %}
+                                        {% endif %}
+                                        {% if slot.flip %}
+                                    </div>
+                                    <div class="flip-card-back talk d-flex align-items-center justify-content-center">
+                                        <a href="abstracts.html#{{slot.ref}}">
+                                            <span>{{slot.title}}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="backtotop">
+    <a class="btn" href="#topofthepage">&#8679;</a>
+</div>
 {% endblock %}

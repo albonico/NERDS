@@ -1,35 +1,32 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block title %}{% endblock %}
     <link rel="stylesheet" href="static/bootstrap.min.css">
     <link rel="stylesheet" href="static/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"> 
-  </head>
+</head>
 
 <body>
-  <a name="topofthepage"></a>
-
-  <!-- HEADER -->
-  <header id="header">
+    <a name="topofthepage"></a>
+    <!-- HEADER -->
+    <header id="header">
         <nav id="header-nav" class="navbar navbar-default">
-          <div class="container-fluid justify-content-center">
-            <div class="navbar-header">
-             <div class="navbar-brand">
-               <a href="index.html"><h1>NERDS conference</h1></a>
-             </div><!-- .navbar-brand -->
-           </div><!-- .navbar-header -->
-         </div><!-- .container-fluid -->
+            <div class="container-fluid justify-content-center">
+                <div class="navbar-header">
+                    <div class="navbar-brand">
+                        <a href="index.html">
+                            <h1>NERDS conference {{Year}}</h1>
+                        </a>
+                    </div><!-- .navbar-brand -->
+                </div><!-- .navbar-header -->
+            </div><!-- .container-fluid -->
         </nav>
-  </header>
-
-  {% block content %}{% endblock %}
-
+    </header>
+    {% block content %}{% endblock %}
 </body>
+
 </html>

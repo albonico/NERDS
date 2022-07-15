@@ -1,12 +1,13 @@
 import os, shutil, sys
 import argparse
 
-from datetime import datetime,timedelta,time
+from datetime import datetime, timedelta, time
 from icalendar import Calendar, Event
 from jinja2 import Template, Environment, FileSystemLoader
 import re
 import numpy as np
 import pandas as pd
+
 
 class SiteGenerator:
     def __init__(self, df, timetable, temp, orgdata):
@@ -38,8 +39,8 @@ class SiteGenerator:
     def render_abs_page(self):
         print("Rendering abstract page to static file.")
         template = self.env.get_template("template_abs.html")
-        with open("public/abstracts.html", "w+") as file:
-            html = template.render(title="Abstracts", talks=self.talks)
+        with open("public/abstracts.html", "w+", encoding="utf-8") as file:
+            html = template.render(Year=year, talks=self.talks)
             file.write(html)
 
     def render_main_page(self):
@@ -48,35 +49,62 @@ class SiteGenerator:
             template = self.env.get_template("template_main_temp.html")
         else:
             template = self.env.get_template("template_main.html")
-        with open("public/index.html", "w+") as file:
-            html = template.render(title="Index", schedule=self.schedule, org=self.org_data)
+        with open("public/index.html", "w+", encoding="utf-8") as file:
+            html = template.render(Year=year, schedule=self.schedule, org=self.org_data)
             file.write(html)
+
 
 class CalGenerator:
     def __init__(self, caldata, orgdata):
-        self.cal_data=caldata
-        self.org_data=orgdata
-        self.dates=[datetime.strptime(d, '%d.%m.%Y') for d in self.org_data["dates"].values[0].split(',')]
-        self.calendar=Calendar()
+        self.cal_data = caldata
+        self.org_data = orgdata
+        self.dates = [
+            datetime.strptime(d, "%d.%m.%Y")
+            for d in self.org_data["dates"].values[0].split(",")
+        ]
+        self.calendar = Calendar()
         self.create_events()
         self.produce_ics()
 
     def create_events(self):
         """Create icalendar events with information from pd.dataframes and add them to calendar"""
-        for i,row in self.cal_data.iterrows():
+        for i, row in self.cal_data.iterrows():
             # Create an event for each talk and add its information
-            e=Event()
-            e.add('summary', row['text'])
-            e.add('description', row['title'])
-            e.add('dtstamp', datetime.now())
+            e = Event()
+            e.add("summary", row["text"])
+            e.add("description", row["title"])
+            e.add("dtstamp", datetime.now())
 
             # Read time from string entry
-            event_time=re.search(r'(?P<h>\d+)(\.(?P<m>\d+))?',row['time'])
+            event_time = re.search(r"(?P<h>\d+)(\.(?P<m>\d+))?", row["time"])
 
-            #Add start end and location for the event
-            e.add('dtstart', datetime.combine(self.dates[row['day']-1],time(hour=int(event_time.group('h')), minute=int(event_time.group('m')) if event_time.group('m') else 0)))
-            e.add('dtend', datetime.combine(self.dates[row['day']-1],time(hour=int(event_time.group('h')), minute=int(event_time.group('m')) if event_time.group('m') else 0))+timedelta(minutes=45))
-            e.add('location', self.org_data['location'])
+            # Add start end and location for the event
+            e.add(
+                "dtstart",
+                datetime.combine(
+                    self.dates[row["day"] - 1],
+                    time(
+                        hour=int(event_time.group("h")),
+                        minute=int(event_time.group("m"))
+                        if event_time.group("m")
+                        else 0,
+                    ),
+                ),
+            )
+            e.add(
+                "dtend",
+                datetime.combine(
+                    self.dates[row["day"] - 1],
+                    time(
+                        hour=int(event_time.group("h")),
+                        minute=int(event_time.group("m"))
+                        if event_time.group("m")
+                        else 0,
+                    ),
+                )
+                + timedelta(minutes=45),
+            )
+            e.add("location", self.org_data["location"])
 
             # Finally add event to calendar
             self.calendar.add_component(e)
@@ -87,6 +115,7 @@ class CalGenerator:
         os.makedirs("downloads", exist_ok=True)
         with open("downloads/cal.ics", "wb") as file:
             file.write(self.calendar.to_ical())
+
 
 if __name__ == "__main__":
     # Create the parser
@@ -132,20 +161,23 @@ if __name__ == "__main__":
     # Assign parsed arguments to variables
     timetable_data = args.tfile
     talks_data = args.datafile
-    o_data =args.orgdatafile
+    o_data = args.orgdatafile
     year = args.Year
     temp = args.Temp
 
-    # Read the three csv files into pandas dataframes 
+    # Read the three csv files into pandas dataframes
     df = pd.read_csv(talks_data)
 
     org_data = pd.read_csv(
         o_data,
         dtype={
-            #TO DO check dtype for list of dates/strings
+            # TO DO check dtype for list of dates/strings
             "email": str,
             "location": str,
-        })
+        },
+        # Convert string containing organizer names into list of names
+        converters={"organizers": lambda x: x[1:-1].split(",")},
+    )
 
     timetable = pd.read_csv(
         timetable_data,
@@ -171,10 +203,12 @@ if __name__ == "__main__":
     current = df[df["Year"] == year]
 
     # Select data for ics file
-    cal_data = timetable[np.logical_and(timetable['kind']=='speaker',timetable['time'].notna())][['day','time','text','title']]
+    cal_data = timetable[
+        np.logical_and(timetable["kind"] == "speaker", timetable["time"].notna())
+    ][["day", "time", "text", "title"]]
 
     # Write ics file
-    CalGenerator(cal_data,org_data)
+    CalGenerator(cal_data, org_data)
 
     # Generate the html files by rendering the templates
     SiteGenerator(current, timetable_by_day, temp, org_data)
