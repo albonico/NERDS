@@ -1,5 +1,7 @@
 # NERDS
 
+Continued on https://github.com/NERDSconference/NERDS-website
+
 Generator.py is a program that can be used to produce html files for the website of the NERDS Conference held yearly within students of the Mathematical Physics group at the MI in Oxford. The program uses jinja2 templates for both the main page and the abstract page. The repository contains:
 
 - template : a folder containing the templates for the html pages as well as css files
